@@ -1,0 +1,34 @@
+#️⃣ Points to talk
+
+first talk about home page 
+    - show browser 
+    - open ts file 
+    - show html file 
+    - logic behind displaying id's and how we filter it 
+    - making http call 
+    - show service file  
+    - also show online api (mockapi.io) 
+    - then toaster 
+    - then after clicking on show details, show routing file 
+    - how I have defined the routes
+    - then jump to hero component 
+    - talk about how you are getting the id 
+    - and then 
+        - how you have used interfaces to avoid any data type 
+        - epoch time 
+        - open modal feature
+    - now downloading data to excel file 
+    - talk about nested objects 
+    - show excel file 
+    - now sending data to api (post method)
+    - also show the localstorage 
+    - how encryption is done 
+    - responsiveness
+
+    practices followed 👇
+    1. naming conventions
+    2. responsiveness and breakpoints
+    3. rendering dynamic data using ngFor
+    4. reduce use of variables
+    5. create service files to make http calls
+    6. create enviornment files to store your secret key

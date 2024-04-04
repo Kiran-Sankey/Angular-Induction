@@ -1,0 +1,273 @@
+<div class="details-id-container">
+  <div class="details-go-back" (click)="navigateBack()">
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="12" cy="12" r="12" fill="#2162AC" />
+    </svg>
+    <img class="go-back-image" src="../../assets/Path 2590.png" alt="Image" />
+  </div>
+
+  <p id="details-text">
+    Details/<span id="details-id">{{ oneObject?.id }}</span>
+  </p>
+</div>
+
+<div class="viewdetails">
+  <div class="view-detail-1">View Details</div>
+  <div class="view-detail-2">XYZ PACKAGING</div>
+</div>
+
+<div class="container">
+  <!-- supplier info -->
+
+  <div class="supplier-info-parent">
+    <div class="supplier-info-left">
+      <img
+        id="supplier-info-left-image"
+        src="../../assets/loremimg.jpg"
+        alt="Image"
+      />
+    </div>
+
+    <div class="supplier-info-right">
+      <div>
+        <p class="supplier-info-heading">
+          Supplier Information <span> (Shipping) </span>
+        </p>
+      </div>
+
+      <!-- using for loop -->
+      <div class="supplier-info-table-layout">
+        <div class="table-outer-div" *ngFor="let data of supplierInfoArray">
+          <div class="table-outer-div-heading">{{ data[0] }}</div>
+          <div class="table-outer-div-description">
+            {{ data[1] }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- approval type status -->
+  <div class="approval-type-status">
+    <div class="approval-type-subdiv" *ngFor="let data of approv">
+      <p class="approval-type-heading">{{ data[0]  }}</p>
+      <p class="approval-type-description" *ngIf="isNumeric(data[1]); else notNumber">
+        {{ convertEpochToDate(data[1]).substring(0, 10)  }}
+      </p>
+      <ng-template #notNumber>
+          <p class="approval-type-description">{{ data[1] }}</p>
+      </ng-template>
+    </div>
+  </div>
+
+  <!-- 1. Program and Part Information -->
+
+  <div class="program-part-info">
+    <p class="supplier-info-heading">1. Program and Part Information</p>
+
+    <div class="supplier-info-table-layout">
+      <div
+        class="table-outer-div program-part-div"
+        *ngFor="let data of programPartInfoArray"
+      >
+        <div class="table-outer-div-heading">
+          {{ data[0] }}
+        </div>
+        <div class="table-outer-div-description">
+          {{ data[1] }}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. visual refernce  -->
+  <div class="visualmain">
+    <h3 class="visual-ref-heading">
+      2. Visual References <span> (part & Packaging)</span>
+    </h3>
+    <div class="visual">
+      <div *ngFor="let img of oneObject?.imagesInfo; let i = index">
+        <div class="visualdiv vdiv1">3.{{ i + 1 }}- Part</div>
+        <div class="visualdiv vdiv2">
+          <img [src]="img ? img : defaultImage" (click)="openModal(img)" alt="Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Packing Information -->
+  <div class="packingData flex-column">
+    <p class="packing-dada-heading">3. Packaging Information</p>
+    <div class="packaging-spec-container">
+      <div class="column">
+        <div class="packing-info-headers">Specifications</div>
+        <div class="packing-info-headers">Primary Packaging</div>
+        <div class="packing-info-headers">Secondary Packaging</div>
+      </div>
+
+      <div class="specificationHeader">
+        <div class="specificationTitle">
+          <div>Density (Qty of parts)</div>
+          <div>Packaging Strategy</div>
+          <div>Carton Code</div>
+          <div>Carton Type(Design)</div>
+          <div>Packaging Material Type</div>
+          <div>Securement / Closure Type</div>
+          <div>Total Loaded Wt.(kg - Full)</div>
+          <div>Outside Dimension (L X W X H) (mm)</div>
+          <div>Dunnage & Description</div>
+          <div>Labels (Quantity / Location)</div>
+          <div>Container Ownership</div>
+        </div>
+        <div class="primaryContent">
+          <div class="contentDetail">
+            <div>{{ oneObject?.primaryPkg?.density }}</div>
+            <div>{{ oneObject?.primaryPkg?.strategy }}</div>
+            <div>{{ oneObject?.primaryPkg?.cartoncode }}</div>
+            <div>{{ oneObject?.primaryPkg?.cartontype }}</div>
+            <div>{{ oneObject?.primaryPkg?.materialtype }}</div>
+            <div>{{ oneObject?.primaryPkg?.securement }}</div>
+            <div>{{ oneObject?.primaryPkg?.totalweight }}</div>
+            <div class="rowArray3">
+              <div>{{ oneObject?.primaryPkg?.outsidedimension?.[0] }}</div>
+              <div>{{ oneObject?.primaryPkg?.outsidedimension?.[1] }}</div>
+              <div>{{ oneObject?.primaryPkg?.outsidedimension?.[2] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>{{ oneObject?.primaryPkg?.dunnage?.[0] }}</div>
+              <div>{{ oneObject?.primaryPkg?.dunnage?.[1] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>{{ oneObject?.primaryPkg?.labels?.[0] }}</div>
+              <div>{{ oneObject?.primaryPkg?.labels?.[1] }}</div>
+            </div>
+            <div>{{ oneObject?.primaryPkg?.container }}</div>
+          </div>
+
+          <div class="contentDetail">
+            <div>{{ oneObject?.secondarypkg?.density }}</div>
+            <div>{{ oneObject?.secondarypkg?.strategy }}</div>
+            <div>{{ oneObject?.secondarypkg?.cartoncode }}</div>
+            <div>{{ oneObject?.secondarypkg?.cartontype }}</div>
+            <div>{{ oneObject?.secondarypkg?.materialtype }}</div>
+            <div>{{ oneObject?.secondarypkg?.securement }}</div>
+            <div>{{ oneObject?.secondarypkg?.totalweight }}</div>
+            <div class="rowArray3">
+              <div>{{ oneObject?.secondarypkg?.outsidedimension?.[0] }}</div>
+              <div>{{ oneObject?.secondarypkg?.outsidedimension?.[1] }}</div>
+              <div>{{ oneObject?.secondarypkg?.outsidedimension?.[2] }}</div>
+            </div>
+            <div class="rowArray2">
+              <div>
+                <div>{{ oneObject?.secondarypkg?.dunnage?.[0] }}</div>
+                <div>{{ oneObject?.secondarypkg?.dunnage?.[1] }}</div>
+              </div>
+            </div>
+            <div class="rowArray2">
+              <div>
+                <div>{{ oneObject?.secondarypkg?.labels?.[0] }}</div>
+                <div>{{ oneObject?.secondarypkg?.labels?.[1] }}</div>
+              </div>
+            </div>
+            <div>{{ oneObject?.secondarypkg?.container }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Shipping and logistics -->
+  <div class="shippingData flex-column">
+    <p class="heading">4. Shipping & Logistics</p>
+    <div class="shippingDataContainer">
+      <div class="dataContainer1">
+        <div>Vehicle type / Size</div>
+        <div>Pallet Dimension (L X W X H) (mm)</div>
+        <div>Sec Packaging per transit modes</div>
+        <div>No of Pry Packs per Sec Packs</div>
+        <div>Terms</div>
+        <div>Hazardous Material Class</div>
+        <div>loop Size (for Returnable)</div>
+        <div>Life of Returnable Packaging</div>
+        <div>Unloading & Loading responsibility</div>
+        <div>Supply at XYZ</div>
+      </div>
+
+      <div class="dataContainer">
+        <div>Closed XYZ</div>
+        <div class="rowArrayX">
+          <p>{{oneObject?.shoppingLogsClosedXyz?.dimentions?.[0] }}</p>
+          <p>{{oneObject?.shoppingLogsClosedXyz?.dimentions?.[1] }}</p>
+          <p>{{oneObject?.shoppingLogsClosedXyz?.dimentions?.[2] }}</p>
+        </div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.secPackaging }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.noOfPryPacks }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.terms }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.materialClass }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.loopSize }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.lifeOfReturn }}</div>
+        <div>{{ oneObject?.shoppingLogsClosedXyz?.unloadingLoading }}</div>
+        <div>Batch Lot</div>
+      </div>
+
+      <div class="dataContainer">
+        <div class="spanHeading">Theoretical XYZ Utilisation</div>
+        <div class="spanrow1">
+          {{ oneObject?.theoreticalXyz?.percentage }}
+        </div>
+        <div class="rowArrayY spanrow2">
+          <div>{{ oneObject?.theoreticalXyz?.materialClass?.[0] }}</div>
+          <div>{{ oneObject?.theoreticalXyz?.materialClass?.[1] }}</div>
+        </div>
+        <div class="spanrow3">{{ oneObject?.theoreticalXyz?.remarkText }}</div>
+        <div class="spanrow4"></div>
+      </div>
+    </div>
+
+    <p class="theDesingPara">
+      The design by supplier ensures the undamaged part supply till the point of
+      use on the XYZ company.
+    </p>
+  </div>
+
+  <!-- 5. Miscellaneous Comment -->
+  <div class="miscellaneousComment">
+    <h3 class="misc-comment">5. Miscellaneous Comment</h3>
+    <textarea
+      name="miscComment"
+      id="miscComment"
+      cols="30"
+      rows="10"
+      type="text"
+      [(ngModel)]="miscComment"
+    ></textarea>
+  </div>
+
+  <!-- 6. Approval Information -->
+  <div class="approv-info-main-container">
+    <h3 class="approv-header">6. Approval Information</h3>
+    <div class="parent-approv-info">
+      <div class="approv-headers">
+        <h2 class="column-heading">Department/Function</h2>
+        <h2 class="column-heading">Name</h2>
+        <h2 class="column-heading">Date</h2>
+      </div>
+      <!-- Items under column 1 -->
+      <div class="approv-headers" *ngFor="let item of oneObject?.approvalInfo">
+        <p class="column-heading person">Packaging Person</p>
+        <p class="column-heading name-date">{{ item.person }}</p>
+        <p class="column-heading name-date">{{ item.date }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="download-button-container">
+    <button (click)="exportToExcel()" class="download-button">Download</button>
+  </div>
+</div>

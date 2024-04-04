@@ -1,0 +1,27 @@
+@import 'ngx-toastr/toastr';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100vw;
+    background-color: #f1f1f1;
+    font-family: 'Open Sans';
+    overflow-x: hidden;
+}
+
+
+:root{
+    --primary-text-color: #27292F;
+    --primary-text-light: #666C84;
+    --primary-blue: #2162AC;
+    --primary-outline: #d3d3d3;
+    --pixels-10px: 0.625rem;
+    --pixels-20px: 1.25rem;
+    --heading-size: 1.125rem;
+    --sub-heading: 1rem;
+}

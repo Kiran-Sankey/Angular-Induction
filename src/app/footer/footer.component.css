@@ -1,0 +1,37 @@
+footer {
+    width: 100vw;
+    height: 50px;
+    background-color: #E1E4E9;
+    display: flex;
+    align-items: center;
+    color: #838EAB;
+    justify-content: center;
+}
+
+a {
+    color: #3A8AFA;
+    padding: 0px 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+@media (max-width: 850px) {
+    footer {
+        font-size: 11px;
+    }
+
+    a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 650px) {
+    footer {
+        font-size: 9px;
+    }
+
+    a {
+        font-size: 9px;
+    }
+}

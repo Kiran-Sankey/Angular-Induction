@@ -1,0 +1,118 @@
+.table-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 50px;
+}
+
+input, button {
+    border: none;
+    padding: var(--pixels-10px);
+    margin-right: var(--pixels-10px);
+}
+
+button {
+    background-color: #29a6ff;
+    font-weight: 500;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #7fc0ef;
+}
+
+.display-id {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.headings {
+    display: flex;
+    gap: 50px;
+    font-size: var(--heading-size);
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+}
+
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    gap: var(--pixels-10px);
+
+}
+
+.form-button {
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    width: 100%;
+}
+
+form {
+    width: 100%;
+    border-radius: 6px;
+    background-color: white;
+}
+
+input {
+    border: 1px solid var(--primary-outline);
+    border-radius: 6px;
+}
+
+.user-form {
+    padding: 20px;
+    margin: 100px 0px;
+}
+
+label {
+    padding-left: 4px;
+}
+
+input::placeholder {
+    font-size: 14px;
+}
+
+.display-users {
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.user {
+    border-bottom: 1px solid var(--primary-outline);
+    margin-top: var(--pixels-10px);
+    padding: 7px 8px;
+    font-weight: 600;
+}
+
+.currentUser {
+    border-bottom: 1px solid var(--primary-outline);
+    margin-top: var(--pixels-10px);
+    padding: 7px 8px;
+    font-weight: 500;
+}
+
+.current-user-parent {
+    padding: 20px;
+    width: 100%;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 3px #007bff;
+}

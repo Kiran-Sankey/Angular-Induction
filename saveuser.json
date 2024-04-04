@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "32b9",
+      "name": "kiran",
+      "email": "sindekiran",
+      "password": "234"
+    },
+    {
+      "id": "2ddb",
+      "name": "asif",
+      "email": "mohammadasif",
+      "password": "23"
+    },
+    {
+      "id": "e108",
+      "name": "Meow",
+      "email": "meow@gamil.com",
+      "password": "asdfiwe"
+    },
+    {
+      "id": "3f10",
+      "name": "Aman Patel",
+      "email": "utkarshaghatage1023@gmail.com",
+      "password": "23dffw"
+    },
+    {
+      "id": "71af",
+      "name": "Sanket",
+      "email": "shindekiran1686@gmail.com",
+      "password": "lskdfjlsd"
+    },
+    {
+      "id": "25b0",
+      "name": "Aman Patel",
+      "email": "shindekiran1686@gmail.com",
+      "password": "23rewer"
+    },
+    {
+      "id": "28d2",
+      "name": "Utkarsha Ghatage",
+      "email": "shindekiran@gmial.om",
+      "password": "2349sf"
+    },
+    {
+      "id": "be51",
+      "name": "Meow",
+      "email": "Kiran.s@sankeysolutions.com",
+      "password": "232342334"
+    }
+  ]
+}
